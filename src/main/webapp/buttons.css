@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+.btn-danger{
+	color: white;
+}
+
+.card:hover {
+	transition: all .75s ease-in-out;
+	transform: scale(1.05);
+}
+
+.btn-danger:hover {
+	background-color: white;
+	color: black;
+}
+.btn-success:hover {
+	background-color: white;
+	color: black;
+}

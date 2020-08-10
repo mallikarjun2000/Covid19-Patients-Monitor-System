@@ -1,0 +1,237 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>UserOrAdminFilter</filter-name>
+  	<display-name>UserOrAdminFilter</display-name>
+  	<description></description>
+  	<filter-class>com.restcontrollers.UserOrAdminFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UserOrAdminFilter</filter-name>
+  	<url-pattern>/userlogin</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>UserLogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetUserDetails</servlet-name>
+  	<display-name>GetUserDetails</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.GetUserDetails</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DoctorLoginServlet</servlet-name>
+  	<display-name>DoctorLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.DoctorLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DoctorHomeServlet</servlet-name>
+  	<display-name>DoctorHomeServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.DoctorHomeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DoctorRegistrationServlet</servlet-name>
+  	<display-name>DoctorRegistrationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.DoctorRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DoctorServlet</servlet-name>
+  	<display-name>DoctorServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.DoctorServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetPatientsServlet</servlet-name>
+  	<display-name>GetPatientsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.GetPatientsServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetDoctorsServlet</servlet-name>
+  	<display-name>GetDoctorsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.GetDoctorsServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteUserServlet</servlet-name>
+  	<display-name>DeleteUserServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecoverUserServlet</servlet-name>
+  	<display-name>RecoverUserServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.RecoverUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SendOTP</servlet-name>
+  	<display-name>SendOTP</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.SendOTP</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VerifiyOTPServlet</servlet-name>
+  	<display-name>VerifiyOTPServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.VerifiyOTPServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserLogoutServlet</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetUserDetails</servlet-name>
+  	<url-pattern>/getuser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DoctorLoginServlet</servlet-name>
+  	<url-pattern>/doctorlogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DoctorHomeServlet</servlet-name>
+  	<url-pattern>/doctorhome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DoctorRegistrationServlet</servlet-name>
+  	<url-pattern>/doctorregistration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DoctorServlet</servlet-name>
+  	<url-pattern>/doctorservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetPatientsServlet</servlet-name>
+  	<url-pattern>/getpatients</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetDoctorsServlet</servlet-name>
+  	<url-pattern>/getdoctors</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteUserServlet</servlet-name>
+  	<url-pattern>/deleteuser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecoverUserServlet</servlet-name>
+  	<url-pattern>/recoveruser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SendOTP</servlet-name>
+  	<url-pattern>/sendotp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VerifiyOTPServlet</servlet-name>
+  	<url-pattern>/verifiyotp</url-pattern>
+  </servlet-mapping>
+  <!-- <servlet>
+  	<servlet-name>GetUsersServlet</servlet-name>
+  	<display-name>GetUsersServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.GetUsersServlet</servlet-class>
+  </servlet> -->
+  <!-- <servlet-mapping>
+  	<servlet-name>GetUsersServlet</servlet-name>
+  	<url-pattern>/getusers</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<display-name>UserUpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.UserUpdateServlet</servlet-class>
+  </servlet> -->
+  <!-- <servlet-mapping>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<url-pattern>/userupdate</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>getReport</servlet-name>
+  	<display-name>getReport</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.getReport</servlet-class>
+  </servlet> -->
+  <!-- <servlet-mapping>
+  	<servlet-name>getReport</servlet-name>
+  	<url-pattern>/getreport</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>userHealth</servlet-name>
+  	<display-name>userHealth</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.userHealth</servlet-class>
+  </servlet> -->
+  <!-- <servlet-mapping>
+  	<servlet-name>userHealth</servlet-name>
+  	<url-pattern>/users/:username</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>UserRegistrationServlet</servlet-name>
+  	<display-name>UserRegistrationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.UserRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminRegistrationServlet</servlet-name>
+  	<display-name>AdminRegistrationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.AdminRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserRegistrationServlet</servlet-name>
+  	<url-pattern>/userregistration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminRegistrationServlet</servlet-name>
+  	<url-pattern>/adminregistration</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>userHome</servlet-name>
+  	<display-name>userHome</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.userHome</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>adminHome</servlet-name>
+  	<display-name>adminHome</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.adminHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userHome</servlet-name>
+  	<url-pattern>/userhome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>adminHome</servlet-name>
+  	<url-pattern>/adminhome</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>AdminLoginServlet</servlet-name>
+  	<display-name>AdminLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.AdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AdminLoginServlet</servlet-name>
+  	<url-pattern>/adminlogin</url-pattern>
+  </servlet-mapping> -->
+  <!-- <servlet>
+  	<servlet-name>UserLoginServlet</servlet-name>
+  	<display-name>UserLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.restcontrollers.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserLoginServlet</servlet-name>
+  	<url-pattern>/userlogin</url-pattern>
+  </servlet-mapping> -->
+</web-app>
