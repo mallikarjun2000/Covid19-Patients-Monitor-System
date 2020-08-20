@@ -13,13 +13,14 @@ public class DoctorDatabase {
 	private String DB_NAME = "covid19monitor";
 	private final String URL = "jdbc:mysql://localhost:3306/"+DB_NAME;
 	private Connection con;
+	private String PASS = "Root@123";
 	public DoctorDatabase() {
 		
 	}
 	
 	public boolean insertRecord(String username, String password, String created_date, String first_name, String last_name, String phone_number, String email ) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("insert into doctors_data values (?,?,?,?,?,?,?)");
 		stmt.setString(1, username);
@@ -34,7 +35,7 @@ public class DoctorDatabase {
 	}
 	public String getPassword(String username) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("select password from doctors_data where username=?");
 		stmt.setString(1, username);
@@ -49,7 +50,7 @@ public class DoctorDatabase {
 	{
 		User user = new User();
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("select * from doctors_data where username=?");
 		stmt.setString(1, username);
@@ -69,7 +70,7 @@ public class DoctorDatabase {
 	{
 		User newUser = new User();
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		PreparedStatement preparedStatement = con.prepareStatement("update doctors_data set first_name=?, last_name=?,"
 				+ " phone_number=?, email=? where username=?");
 		preparedStatement.setString(1, user.getFirstName());
@@ -83,7 +84,7 @@ public class DoctorDatabase {
 	
 	public ArrayList<User> getPatients(String username) throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("select * from users_data where doctor_name=?");
 		stmt.setString(1, username);
@@ -101,7 +102,7 @@ public class DoctorDatabase {
 	
 	public ArrayList<User> getDoctors() throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("select * from doctors_data");
 		//stmt.setString(1, username);
@@ -120,7 +121,7 @@ public class DoctorDatabase {
 	public void deleteDoctor(String username) throws ClassNotFoundException, SQLException
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("delete from doctors_data where username=?");
 		stmt.setString(1, username);
@@ -130,7 +131,7 @@ public class DoctorDatabase {
 	public String getDoctorEmail(String username) throws ClassNotFoundException, SQLException
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL,"root","");
+		con = DriverManager.getConnection(URL,"root",PASS);
 		//Class.forName("oracle.jdbc.driver.OracleDriver");  (username, password, email, first_name, last_name, phone_number, created_date)
 		PreparedStatement stmt=con.prepareStatement("select email from doctors_data where username=?");
 		stmt.setString(1, username);
